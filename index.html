@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Estaciones de Radio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!-- Incluimos la bibliote SM2 recoded by, Nicolas Gliksberg -->
+<script type="text/javascript" src="script/soundmanager2.js"></script>
+<!-- Cargamos el nucleo donde estan las radios definidas y funciones generales -->
+<script type="text/javascript" src="core.js"></script>
+<!-- Script para detectar Flash Player-->
+<script src="script/flash_detect.js"></script>
+<!-- Cargamos bootstrap Css para los controles -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+
+<style type="text/css">
+#soundmanager-debug {
+ /* SM2 debug contenedor opcional se activa en core.js soundManager.debugMode= true; */
+ position:absolute;position:fixed;*position:absolute;bottom:10px;right:10px;width:50em;height:18em;overflow:auto;background:#fff;margin:1em;padding:1em;border:1px solid #999;font-family:"lucida console",verdana,tahoma,"sans serif";font-size:x-small;line-height:1.5em;opacity:0.9;filter:alpha(opacity=90);z-index:99;
+}
+
+body {
+ font:100% normal verdana,arial,tahoma,"sans serif";
+ padding: 30px;*/
+ 
+}
+ 
+ // Configuramos Bootstrap 100% responsive
+  // Smartphones
+  media (max-width: 480px) { &#8230; }
+  // Tablets
+  media (max-width: 768px) { … }
+  // Tablets apaisados y escritorio
+  media (min-width: 768px) and (max-width: 980px) { &#8230; }
+  // Escritorio grande
+  media (min-width: 1200px) { .. }
+
+</style>
+<script type="text/javascript"> 
+// Chequeamos si tienen flash instalado si no lo redireccionamos a a donde sea
+if(!FlashDetect.installed){
+ 
+   alert("Lo sentimos, es necesario el plugin Adobe Flash Player!");
+   window.open("http://www.elandroidelibre.com/2013/06/instala-ya-la-nueva-version-de-adobe-flash-player-en-tu-android.html",'_blank');
+   //window.location = "http://www.elandroidelibre.com/2013/06/instala-ya-la-nueva-version-de-adobe-flash-player-en-tu-android.html";
+  }
+</script>
+
+<body>
+ <h1>
+  <span class="label label-primary">StreamPlayer Bootstrap+Soundmanager2 <span class="label label-info"><span class="glyphicon glyphicon-headphones"></span></span>
+ </h1>
+<h2>
+ <span class="label label-success">Indicar la radio a reproducir playPause('mitre') ver codigo de fuente</span>
+ </h2>
+
+ 
+<!-- decir que radio va reproducir en "playPause('id_de_la_radio')"
+     ver core.js en el final del archivo donde se definen las radios -->
+
+<!-- Aca empieza lo que deberia ir en el iframe -->
+ <div id="controls">
+  <button id="playpause" type="button" class="btn btn-default btn-lg" onclick="playPause('mitre')">
+   <span id="playpauseimg" class="glyphicon glyphicon-play"></span> 
+   </button>
+  
+   <button type="button" class="btn btn-default btn-lg" onclick="Mute()">
+   <span id="muteimg" class="glyphicon glyphicon-volume-up"></span> 
+   </button>
+   
+   <input id="volume" type="range" onchange="setVolume()" class="btn btn-link btn-lg"/> 
+   </span>
+ </div>
+ <!-- Aca termina el codigo-->
+ 
+ <div id="sm2-container">
+  <!-- SM2 flash DEBUG Configurar en core.js soundManager.debugMode = false; -->
+ </div>
+ </body>
+
+</html>
